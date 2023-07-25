@@ -6,16 +6,13 @@ use App\Http\Middleware\TokenVerificationMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
+// auth route
 Route::post('/user-registration',[UserController::class,'userRegistration']);
 Route::post('/UserLogin',[UserController::class,'userLogin']);
 Route::post('/sendOtpToEmail',[UserController::class,'sendOtpToEmail']);
 Route::post('/otpVerify',[UserController::class,'otpVerify']);
 Route::post('/setPassword',[UserController::class,'setPassword'])->middleware([TokenVerificationMiddleware::class]);
 
-// profile route details
-Route::get('/user-profile-details',[UserController::class,'getUser'])->middleware([TokenVerificationMiddleware::class]);
-//profile update
-Route::post('/profile-update',[UserController::class,'profileUpdate'])->middleware([TokenVerificationMiddleware::class]);
 
 
 

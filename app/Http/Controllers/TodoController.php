@@ -12,14 +12,7 @@ class TodoController extends Controller
     function getTodoList(Request $request){
 
         $id=$request->header('id');
-        return TodoList::where('userId','=',$id)->get();
-        //return DB::table('todo_lists')->where('userId','=',$id)->get();
-
-        // return response()->json([
-            
-        //     'status'=>'success',
-        //     'message'=>''
-        // ])
+        return TodoList::where('userId','=',$id)->get();       
     }
 
     function createList(Request $request){

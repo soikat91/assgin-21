@@ -57,6 +57,7 @@ class UserController extends Controller
             return response()->json([
                 'status'=>'failed',              
                 'message'=>"Registration Failed Please Try Again"
+                
             ],200);
         }   
   

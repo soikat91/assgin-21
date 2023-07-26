@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('todo_lists', function (Blueprint $table) {
             $table->id();
             $table->string('title',255);
+            $table->text('description');
+            $table->enum('status',['pending','progress','completed']);
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('id')->on('users')->cascadeOnDelete()->restrictOnUpdate();
             $table->timestamp('created_at')->useCurrent();
